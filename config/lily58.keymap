@@ -11,6 +11,15 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <14 15 16>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -45,7 +54,7 @@
 &bt BT_CLR         &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_SEL 4                      &to 3             &trans        &trans       &trans                   &trans                    &trans
 &ext_power EP_TOG  &kp DE_PLUS     &kp DE_MINUS   &kp KP_MULTIPLY  &kp DE_SLASH  &trans                            &kp GRAVE         &kp DE_EQUAL  &kp DE_PIPE  &kp DE_LBRC              &kp DE_RBRC               &trans
 &ext_power EP_ON   &kp DE_SECTION  &kp DE_DOLLAR  &kp DE_QUESTION  &kp DE_EXCL   &kp DE_PERCENT                    &kp DE_BACKSLASH  &kp DE_SLASH  &kp DE_AT    &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &trans
-&ext_power EP_OFF  &kp DE_SQUARE   &kp DE_SUPER3  &kp DE_SQT       &kp DE_DQT    &trans          &trans    &trans  &kp DE_TILDE      &kp DE_MINUS  &kp DE_PLUS  &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET      &trans
+&ext_power EP_OFF  &kp DE_SQUARE   &kp DE_SUPER3  &kp DE_SQT       &kp DE_DQT    &kp DE_GRAVE    &trans    &trans  &kp DE_TILDE      &kp DE_MINUS  &kp DE_PLUS  &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET      &trans
                                                   &trans           &trans        &trans          &trans    &trans  &trans            &trans        &trans
             >;
 
@@ -61,11 +70,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F1          &kp F2  &kp F3     &kp F4        &kp F5            &kp F6                       &kp F7        &kp F8        &kp F9    &kp F10            &kp F11          &kp F12
-&trans          &trans  &kp DE_N7  &kp DE_N8     &kp DE_N9         &trans                       &kp DE_PLUS   &kp DE_EQUAL  &kp UP    &kp DE_UNDERSCORE  &kp KP_MULTIPLY  &kp PG_UP
-&trans          &trans  &kp N4     &kp N5        &kp N6            &trans                       &kp DE_MINUS  &kp LEFT      &kp DOWN  &kp RIGHT          &kp DE_SLASH     &kp PG_DN
-&kp LEFT_SHIFT  &trans  &kp DE_N1  &kp DE_N2     &kp DE_N3         &trans  &kp HOME    &kp END  &kp F7        &kp F8        &kp F9    &kp F10            &kp F11          &kp F12
-                                   &kp LEFT_ALT  &kp LEFT_CONTROL  &trans  &trans      &trans   &trans        &trans        &trans
+&kp F1          &kp F2     &kp F3     &kp F4        &kp F5            &kp F6                       &kp F7        &kp F8        &kp F9    &kp F10            &kp F11          &kp F12
+&trans          &trans     &kp DE_N7  &kp DE_N8     &kp DE_N9         &trans                       &kp DE_PLUS   &kp DE_EQUAL  &kp UP    &kp DE_UNDERSCORE  &kp KP_MULTIPLY  &kp PG_UP
+&trans          &trans     &kp DE_N4  &kp DE_N5     &kp DE_N6         &trans                       &kp DE_MINUS  &kp LEFT      &kp DOWN  &kp RIGHT          &kp DE_SLASH     &kp PG_DN
+&kp LEFT_SHIFT  &kp DE_N0  &kp DE_N1  &kp DE_N2     &kp DE_N3         &trans  &kp HOME    &kp END  &kp F7        &kp F8        &kp F9    &kp F10            &kp F11          &kp F12
+                                      &kp LEFT_ALT  &kp LEFT_CONTROL  &trans  &trans      &trans   &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
